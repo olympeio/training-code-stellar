@@ -1,0 +1,11 @@
+.DS_Store
+.idea/
+.dc-init/
+backend/
+build/
+build.out/
+build.cache/
+build.out_non-tech/
+dist/
+dist-node/
+node_modules/

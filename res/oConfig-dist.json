@@ -1,0 +1,21 @@
+{
+    "dc": {
+        "subscribeAll": true
+    },
+    "composer": {
+        "suggestedUser": "admin",
+        "sso": "manual"
+    },
+    "server" : {
+        "ssl": true,
+        "host": <server-address>,
+        "port": <server-port>
+    },
+    "bus": {
+        "host": <bus-address>,
+        "path": "/mqtt",
+        "ssl": true,
+        "port": <bus-port>,
+        "vhost": <virtual-host-name>
+    }
+}
