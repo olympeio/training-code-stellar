@@ -2,7 +2,7 @@
 version: "3.9"
 services:
   neo4j:
-    image: "olympeio/neo4j-procedure:1.8.5"
+    image: "olympeio/neo4j-procedure:1.9.5"
     container_name: "neo4j"
     environment:
       NEO4J_AUTH: "neo4j/password1"
@@ -15,7 +15,7 @@ services:
       - ./backend/neo4j-data:/data
       - ./backend/neo4j-logs:/log
   orchestrator:
-    image: "olympeio/orchestrator:5.9.7"
+    image: "olympeio/orchestrator:6.2.1"
     depends_on:
       - neo4j
       - rabbitmq

@@ -10,13 +10,13 @@ export default class IssuePayment extends ActionBrick {
      * Note that the method will be executed _even if_ an input (fromAccount, accountSequence, toAccount, amount) is undefined.
      * 
      * @protected
-     * @param {!Context} context
+     * @param {!BrickContext} context
      * @param {string} fromAccount
      * @param {string} toAccount
      * @param {number} amount
      * @param {function()} forwardEvent
      */
-    onUpdate(context, [fromAccountSecret, toAccountId, amount], [forwardEvent]) {
+    update(context, [fromAccountSecret, toAccountId, amount], [forwardEvent]) {
 
         console.log('Starting new transaction ...')
 
