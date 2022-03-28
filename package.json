@@ -1,26 +1,25 @@
 {
   "name": "stellar-integrator",
   "main": "src/main.js",
-  "version": "1.0.0",
   "scripts": {
     "postinstall": "npx gulp rewrite --core.rewrite=version",
     "add": "npm install",
-    "postadd": "npx gulp rewrite && npm run reset",
+    "postadd": "npx gulp rewrite",
     "reset": "npx gulp reset --core.mode=safe",
     "reset:debug": "npm run reset -- --dc.debug=true",
     "snapshot": "npx gulp snapshot --core.mode=safe",
     "check": "npx gulp check --core.mode=safe",
     "upgrade": "npx gulp upgrade --core.mode=interactive",
-    "serve": "npm run serve:local",
-    "serve:local": "npx webpack serve --config-name draw-local",
-    "serve:dist": "npx webpack serve --config-name draw-dist",
+    "serve:draw": "npm run serve:draw:local",
+    "serve:draw:local": "npx webpack serve --config-name draw-local",
+    "serve:draw:dist": "npx webpack serve --config-name draw-dist",
     "build:node": "npm run build:node:local",
     "build:node:local": "npx webpack --config-name node-local",
     "build:node:dist": "npx webpack --config-name node-dist"
   },
   "devDependencies": {
-    "@olympeio/dev-tools": "~1.2.1",
-    "@olympeio/draw": "~1.16.2",
+    "@olympeio/dev-tools": "~1.3.1",
+    "@olympeio/draw": "~2.0",
     "clean-webpack-plugin": "^4.0",
     "copy-webpack-plugin": "^9.0",
     "generate-json-webpack-plugin": "^2.0",
@@ -33,9 +32,9 @@
     "webpack-node-externals": "^3.0"
   },
   "dependencies": {
-    "@olympeio/core": "~1.2.5",
-    "@olympeio/runtime-node": "~8.6.2",
-    "@olympeio/runtime-web": "~8.6.2",
+    "@olympeio/core": "~2.0",
+    "@olympeio/runtime-node": "~9.0",
+    "@olympeio/runtime-web": "~9.0",
     "sodium-native": "^3.3.0",
     "stellar-base": "^6.0.6",
     "stellar-sdk": "^9.0.1"

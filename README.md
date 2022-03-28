@@ -13,7 +13,7 @@ npm run reset
 
 Serve DRAW
 ```
-npm run serve
+npm run serve:draw
 ```
 
 > You may also [work on a remote data cloud instance](#working-on-a-remote-data-cloud-instance).
@@ -21,7 +21,7 @@ npm run serve
 ## Serve a backend service
 ```
 npm run build:node
-cd dist-node/
+cd dist/node/
 node main.js sc.app=017d58914a3432920c3f
 ```
 
@@ -54,7 +54,7 @@ import { Keypair, Account, Networks, Operation, Asset } from "stellar-base";
 import { BASE_FEE, TransactionBuilder, Server } from "stellar-sdk";
 ```
 
-We need to get a [server](https://stellar.github.io/js-stellar-sdk/Server.html) to connect to and the [public/secret keypair(https://stellar.github.io/js-stellar-sdk/Keypair.html)] of account we want to debit:
+We need to get a [server](https://stellar.github.io/js-stellar-sdk/Server.html) to connect to and the [public/secret keypair](https://stellar.github.io/js-stellar-sdk/Keypair.html) of account we want to debit:
 ```js
 const server = new Server('https://horizon-testnet.stellar.org');
 const sourceKeys = Keypair.fromSecret(fromAccountSecret);
@@ -103,7 +103,7 @@ export default class IssuePayment extends ActionBrick {
      * @param {number} amount
      * @param {function()} forwardEvent
      */
-    onUpdate(context, [fromAccountSecret, toAccountId, amount], [forwardEvent]) {
+    update(context, [fromAccountSecret, toAccountId, amount], [forwardEvent]) {
 
         console.log('Starting new transaction ...')
 
@@ -162,3 +162,7 @@ If the backend starts correctly, you should see the following logs:
 
 ## Test
 Run UI application `Test App`. Click on `New Transaction`, fill the fields, and click `Submit`. Depending on how you implemented your brick, you should see some logs in the back-end service terminal. If the transaction terminates successfully, and if you correctly called `forwardEvent()` in this situation, you should be brought back to the account balances page.
+
+# Stellar Laboratory
+
+Visit [Stellar Laboratory](https://laboratory.stellar.org) to create and fund accounts. Copy the generated key pair into the `Accounts` dataset.
