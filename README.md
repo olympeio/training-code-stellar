@@ -134,7 +134,6 @@ export default class IssuePayment extends ActionBrick {
 }
 
 registerBrick('017d57f48c9dff05a8a9', IssuePayment);
-
 ```
 
 ## Use the action in a remote action
@@ -148,7 +147,7 @@ npm run build:node
 ```
 (or `npm run build:node:dist` if you want to connect to a remote data cloud).
 
-Then, move to directory `node-dist` and start the backend with:
+Then, move to directory `node/dist` and start the backend with:
 ```bash
 node main.js sc.app=017d58914a3432920c3f
 ```
